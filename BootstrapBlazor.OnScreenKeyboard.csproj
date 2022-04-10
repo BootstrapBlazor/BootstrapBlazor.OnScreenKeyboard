@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Version>6.0.0</Version>
+        <IsPackable>true</IsPackable>
+        <PackageIcon>logo.png</PackageIcon>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Company>Densen Informatica</Company>
+        <Authors>Alex Chow</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Bootstrap Blazor OnScreenKeyboard Components</PackageTags>
+        <Description>Bootstrap UI OnScreenKeyboard components experience</Description>
+        <AssemblyName>BootstrapBlazor.OnScreenKeyboard</AssemblyName>
+        <RootNamespace>BootstrapBlazor.OnScreenKeyboard</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="logo.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BootstrapBlazor" Version="6.5.0" />
+    </ItemGroup>
+</Project>
