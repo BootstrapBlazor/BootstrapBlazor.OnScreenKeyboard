@@ -16,7 +16,8 @@ public partial class OnScreenKeyboard : IAsyncDisposable
 {
     [Inject] IJSRuntime? JS { get; set; }
     private IJSObjectReference? module;
-    private DotNetObjectReference<OnScreenKeyboard>? InstanceWebApi { get; set; }
+    private IJSObjectReference? instanceAddScript;
+    private IJSObjectReference? instance;
 
     /// <summary>
     /// 获得/设置 组件class名称
@@ -67,19 +68,18 @@ public partial class OnScreenKeyboard : IAsyncDisposable
             if (firstRender)
             { 
                 module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js");
-                InstanceWebApi = DotNetObjectReference.Create(this);
-                await module.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
+                instanceAddScript = await module.InvokeAsync<IJSObjectReference>("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
 
                 Option??= new KeyboardOption();
                 if (KeyboardKeys != null) Option.KeyboardKeysType = KeyboardKeys!.Value;
                 try
                 {
-                    await module.InvokeVoidAsync("init", ClassName, Option);
+                    instance = await module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
                 catch (Exception)
                 {
                     await Task.Delay(200);
-                    await module.InvokeVoidAsync("init", ClassName, Option);
+                    instance = await module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
             }
         }
@@ -91,6 +91,16 @@ public partial class OnScreenKeyboard : IAsyncDisposable
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {
+        if (instance != null)
+        {
+            await instance.DisposeAsync();
+        }
+
+        if (instanceAddScript != null)
+        {
+            await instanceAddScript.DisposeAsync();
+        }
+
         if (module is not null)
         {
             await module.DisposeAsync();
