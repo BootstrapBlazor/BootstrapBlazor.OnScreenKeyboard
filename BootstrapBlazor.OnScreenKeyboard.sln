@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.OnScreenKeyboard", "BootstrapBlazor.OnScreenKeyboard.csproj", "{8E28239B-A119-49D9-A78C-8DA67A33AA5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.OnScreenKeyboard", "src\BootstrapBlazor.OnScreenKeyboard\BootstrapBlazor.OnScreenKeyboard.csproj", "{7876F5CF-7B59-4E53-8A91-018E0FB93085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8E28239B-A119-49D9-A78C-8DA67A33AA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E28239B-A119-49D9-A78C-8DA67A33AA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E28239B-A119-49D9-A78C-8DA67A33AA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E28239B-A119-49D9-A78C-8DA67A33AA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7876F5CF-7B59-4E53-8A91-018E0FB93085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7876F5CF-7B59-4E53-8A91-018E0FB93085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7876F5CF-7B59-4E53-8A91-018E0FB93085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7876F5CF-7B59-4E53-8A91-018E0FB93085}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
