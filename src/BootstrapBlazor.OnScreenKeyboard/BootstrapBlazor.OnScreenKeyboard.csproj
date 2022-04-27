@@ -4,7 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Version>6.0.2</Version>
+        <Version>6.0.3</Version>
         <IsPackable>true</IsPackable>
         <PackageIcon>logo.png</PackageIcon>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -25,7 +25,12 @@
     <ItemGroup>
         <None Include="logo.png" Pack="true" PackagePath="" />
     </ItemGroup>
-
+    
+    <PropertyGroup>
+        <NoWarn>1701;1702;1705;1591</NoWarn>
+        <DocumentationFile>BootstrapBlazor.OnScreenKeyboard.xml</DocumentationFile>
+    </PropertyGroup>
+    
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
     </ItemGroup>

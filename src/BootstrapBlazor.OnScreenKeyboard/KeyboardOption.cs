@@ -23,8 +23,19 @@ public enum KeyboardKeysType
 /// </summary>
 public enum KeyboardType
 {
+    /// <summary>
+    /// 全键盘
+    /// </summary>
     all,
+
+    /// <summary>
+    /// 字母
+    /// </summary>
     keyboard,
+
+    /// <summary>
+    /// 小数字键盘
+    /// </summary>
     numpad,
 }
 
@@ -42,8 +53,19 @@ public enum KeyboardPlacement
 /// </summary>
 public enum KeyboardSpecialcharacters
 {
+    /// <summary>
+    /// 默认
+    /// </summary>
     all,
+
+    /// <summary>
+    /// 欧洲
+    /// </summary>
     europe,
+
+    /// <summary>
+    /// 自定义
+    /// </summary>
     customer
 }
 
@@ -52,9 +74,21 @@ public enum KeyboardSpecialcharacters
 /// </summary>
 public enum KeyboardTheme
 {
+    /// <summary>
+    /// 浅色
+    /// </summary>
     light,
+
+    /// <summary>
+    /// 暗黑
+    /// </summary>
     dark,
+
+    /// <summary>
+    /// 平板
+    /// </summary>
     flat,
+
     material,
     oldschool
 }
