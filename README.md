@@ -1,39 +1,54 @@
-# BootstrapBlazor.OnScreenKeyboard
+## Blazor On-screen keyboard component
 
-# Blazor OnScreenKeyboard 屏幕键盘 组件
+English | [中文](README.zh.CN.md)
 
-定位组件
 
-示例:
+
+### Demo
+
+https://www.blazor.zone/onscreenkeyboards
 
 https://blazor.app1.es/onscreenkeyboards
 
-使用方法:
+## Instructions:
 
-1.nuget包
+1. NuGet install pack 
 
-```BootstrapBlazor.SignaturePad```
+    `BootstrapBlazor.OnScreenKeyboard`
 
-2._Imports.razor 文件 或者页面添加 添加组件库引用
+2. _Imports.razor or Razor page
 
-```@using BootstrapBlazor.Components```
+   ```
+   @using BootstrapBlazor.Components
+   ```
+3. Razor page
 
+    ```
+    @code{
+        string BindValue = "virtualkeyboard"; 
+    }
 
-3.razor页面
-```
-<input class="@ClassName"
-          data-kioskboard-type="@KeyboardType.all.ToString()"
-          data-kioskboard-specialcharacters="true"
-          placeholder="全键盘" />
-<input class="@ClassName"
-       data-kioskboard-type="@KeyboardType.keyboard.ToString()"
-       data-kioskboard-placement="@KeyboardPlacement.bottom.ToString()"
-       placeholder="字母键盘" />
-<input class="@ClassName"
-       data-kioskboard-type="@KeyboardType.numpad.ToString()"
-       data-kioskboard-placement="@(KeyboardPlacement.bottom.ToString())"
-       placeholder="数字键盘" />
-<OnScreenKeyboard ClassName="@ClassName" />
+    <input class="@ClassName"
+           data-kioskboard-type="@KeyboardType.all.ToString()"
+           data-kioskboard-specialcharacters="true"
+           placeholder="全键盘" />
+ 
+    <input class="@ClassName"
+           data-kioskboard-type="@KeyboardType.keyboard.ToString()"
+           data-kioskboard-placement="@KeyboardPlacement.bottom.ToString()"
+           placeholder="字母键盘" />
 
-```
+    <input class="@ClassName"
+           data-kioskboard-type="@KeyboardType.numpad.ToString()"
+           data-kioskboard-placement="@(KeyboardPlacement.bottom.ToString())"
+           placeholder="数字键盘" />
+    ```
 
+4.  More informations
+
+    Bootstrap style Blazor UI component library
+Based on the Bootstrap style library, it is carefully built, and 100 a variety of commonly used components have been added to bring you an extraordinary feeling for rapid development projects
+
+    <https://www.blazor.zone>
+
+    <https://www.blazor.zone/onscreenkeyboards>
