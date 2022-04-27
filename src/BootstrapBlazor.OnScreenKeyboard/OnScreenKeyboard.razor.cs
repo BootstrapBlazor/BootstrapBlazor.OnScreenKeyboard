@@ -44,13 +44,13 @@ public partial class OnScreenKeyboard : IAsyncDisposable
     public KeyboardPlacement Placement { get; set; } = KeyboardPlacement.bottom;
 
     /// <summary>
-    /// 获得/设置 对齐
+    /// 获得/设置 占位符
     /// </summary>
     [Parameter]
     public string Placeholder { get; set; } = "";
 
     /// <summary>
-    /// 获得/设置 对齐
+    /// 获得/设置 特殊字符
     /// </summary>
     [Parameter]
     public bool Specialcharacters { get; set; } = true;

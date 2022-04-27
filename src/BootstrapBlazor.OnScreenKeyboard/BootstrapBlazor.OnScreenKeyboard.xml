@@ -226,12 +226,12 @@
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.Placeholder">
             <summary>
-            获得/设置 对齐
+            获得/设置 占位符
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.Specialcharacters">
             <summary>
-            获得/设置 对齐
+            获得/设置 特殊字符
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.Option">
