@@ -56,7 +56,7 @@
         </member>
         <member name="T:BootstrapBlazor.Components.KeyboardTheme">
             <summary>
-            键盘主题
+            键盘主题, 浅色 || 暗黑 || 平板 || material ||oldschool
             </summary>
         </member>
         <member name="F:BootstrapBlazor.Components.KeyboardTheme.light">
@@ -140,13 +140,14 @@
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.allowRealKeyboard">
             <summary> 
-            允许或阻止真实/物理键盘的使用。“false”时被阻止<para></para>
+            允许或阻止真实/物理键盘的使用
+            <para></para>
             此外，如果想要使用真实/物理键盘，“allowMobileKeyboard”选项也必须为“true”。
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.allowMobileKeyboard">
             <summary>
-            允许或阻止使用移动键盘。当 "false" 
+            允许或阻止使用移动键盘
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.cssAnimations">
@@ -156,7 +157,7 @@
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.cssAnimationsDuration">
             <summary>
-            CSS 动画持续时间为毫秒
+            CSS 动画持续时间(毫秒)
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.CssAnimationsStyle">
@@ -176,22 +177,22 @@
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.keysFontFamily">
             <summary>
-            键的字体系列
+            按键字体名称
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.keysFontSize">
             <summary>
-            按键的字体大小
+            按键文字尺寸
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.keysFontWeight">
             <summary>
-            按键的字体粗细
+            按键文字粗细
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.keysIconSize">
             <summary>
-            图标键的大小
+            按键图标大小
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.KeyboardOption.autoScroll">
@@ -231,12 +232,12 @@
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.Specialcharacters">
             <summary>
-            获得/设置 特殊字符
+            获得/设置 显示特殊字符切换按钮
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.Option">
             <summary>
-            获得/设置 配置
+            获得/设置 键盘配置
             </summary>
         </member>
         <member name="P:BootstrapBlazor.Components.OnScreenKeyboard.OnError">

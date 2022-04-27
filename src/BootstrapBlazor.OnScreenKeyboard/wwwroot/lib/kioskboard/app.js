@@ -26,5 +26,4 @@
 export function init(className, option) {
     console.info(className, option);
     KioskBoard.run('.' + className, option);
-    return true;
 }
