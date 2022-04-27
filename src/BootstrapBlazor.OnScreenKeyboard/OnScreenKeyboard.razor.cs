@@ -16,7 +16,6 @@ public partial class OnScreenKeyboard : IAsyncDisposable
 {
     [Inject] IJSRuntime? JS { get; set; }
     private IJSObjectReference? module;
-    private IJSObjectReference? instanceAddScript;
     private IJSObjectReference? instance;
 
     /// <summary>
@@ -50,13 +49,13 @@ public partial class OnScreenKeyboard : IAsyncDisposable
     public string Placeholder { get; set; } = "";
 
     /// <summary>
-    /// 获得/设置 特殊字符
+    /// 获得/设置 显示特殊字符切换按钮
     /// </summary>
     [Parameter]
     public bool Specialcharacters { get; set; } = true;
 
     /// <summary>
-    /// 获得/设置 配置
+    /// 获得/设置 键盘配置
     /// </summary>
     [Parameter]
     public KeyboardOption? Option { get; set; } = new KeyboardOption();
@@ -68,7 +67,7 @@ public partial class OnScreenKeyboard : IAsyncDisposable
             if (firstRender)
             { 
                 module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js");
-                instanceAddScript = await module.InvokeAsync<IJSObjectReference>("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
+                await module.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
 
                 Option??= new KeyboardOption();
                 if (KeyboardKeys != null) Option.KeyboardKeysType = KeyboardKeys!.Value;
@@ -94,11 +93,6 @@ public partial class OnScreenKeyboard : IAsyncDisposable
         if (instance != null)
         {
             await instance.DisposeAsync();
-        }
-
-        if (instanceAddScript != null)
-        {
-            await instanceAddScript.DisposeAsync();
         }
 
         if (module is not null)

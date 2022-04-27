@@ -70,7 +70,7 @@ public enum KeyboardSpecialcharacters
 }
 
 /// <summary>
-/// 键盘主题
+/// 键盘主题, 浅色 || 暗黑 || 平板 || material ||oldschool
 /// </summary>
 public enum KeyboardTheme
 {
@@ -203,7 +203,8 @@ public class KeyboardOption
 
 
     /// <summary> 
-    /// 允许或阻止真实/物理键盘的使用。“false”时被阻止<para></para>
+    /// 允许或阻止真实/物理键盘的使用
+    /// <para></para>
     /// 此外，如果想要使用真实/物理键盘，“allowMobileKeyboard”选项也必须为“true”。
     /// </summary>
     public bool allowRealKeyboard { get; set; } = true;
@@ -211,7 +212,7 @@ public class KeyboardOption
 
 
     /// <summary>
-    /// 允许或阻止使用移动键盘。当 "false" 
+    /// 允许或阻止使用移动键盘
     /// </summary>
     public bool allowMobileKeyboard { get; set; } = true;
 
@@ -221,7 +222,7 @@ public class KeyboardOption
     public bool cssAnimations { get; set; } = true;
 
     /// <summary>
-    /// CSS 动画持续时间为毫秒
+    /// CSS 动画持续时间(毫秒)
     /// </summary>
     public int cssAnimationsDuration { get; set; } = 360;
 
@@ -238,32 +239,32 @@ public class KeyboardOption
     public bool keysAllowSpacebar { get; set; } = true;
 
     /// <summary>
-    /// 空格键（空格键）的文本。不设置显示为" "
+    /// 空格键（空格键）的文本。不设置显示为"Space"
     /// </summary>
     public string keysSpacebarText { get; set; } = "Space";
 
     /// <summary>
-    /// 键的字体系列
+    /// 按键字体名称
     /// </summary>
     public string keysFontFamily { get; set; } = "sans-serif";
 
     /// <summary>
-    /// 按键的字体大小
+    /// 按键文字尺寸
     /// </summary>
     public string keysFontSize { get; set; } = "22px";
 
     /// <summary>
-    /// 按键的字体粗细
+    /// 按键文字粗细
     /// </summary>
     public string keysFontWeight { get; set; } = "normal";
 
     /// <summary>
-    /// 图标键的大小
+    /// 按键图标大小
     /// </summary>
     public string keysIconSize { get; set; } = "25px";
 
     /// <summary>
     /// 将文档滚动到 input/textarea 元素的顶部或底部（通过放置选项）
     /// </summary>
-    public bool autoScroll { get; set; } = false;
+    public bool autoScroll { get; set; } = true;
 }
