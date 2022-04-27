@@ -31,17 +31,17 @@ https://blazor.app1.es/onscreenkeyboards
     <input class="@ClassName"
            data-kioskboard-type="@KeyboardType.all.ToString()"
            data-kioskboard-specialcharacters="true"
-           placeholder="全键盘" />
+           placeholder="Full Keyboard" />
  
     <input class="@ClassName"
            data-kioskboard-type="@KeyboardType.keyboard.ToString()"
            data-kioskboard-placement="@KeyboardPlacement.bottom.ToString()"
-           placeholder="字母键盘" />
+           placeholder="Keyboard" />
 
     <input class="@ClassName"
            data-kioskboard-type="@KeyboardType.numpad.ToString()"
            data-kioskboard-placement="@(KeyboardPlacement.bottom.ToString())"
-           placeholder="数字键盘" />
+           placeholder="Numpad" />
     ```
 
 4.  More informations
