@@ -1,35 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Version>6.0.6</Version>
-        <IsPackable>true</IsPackable>
-        <PackageIcon>logo.png</PackageIcon>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Company>Densen Informatica</Company>
-        <Authors>Alex Chow</Authors>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</PackageProjectUrl>
         <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
         <PackageTags>Bootstrap Blazor OnScreenKeyboard Components</PackageTags>
         <Description>Bootstrap UI OnScreenKeyboard components experience</Description>
         <AssemblyName>BootstrapBlazor.OnScreenKeyboard</AssemblyName>
         <RootNamespace>BootstrapBlazor.OnScreenKeyboard</RootNamespace>
-        <SignAssembly>True</SignAssembly>
         <AssemblyOriginatorKeyFile>..\keys\Longbow.Utility.snk</AssemblyOriginatorKeyFile>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <None Include="logo.png" Pack="true" PackagePath="" />
-    </ItemGroup>
-    
-    <PropertyGroup>
-        <NoWarn>1701;1702;1705;1591</NoWarn>
-        <DocumentationFile>BootstrapBlazor.OnScreenKeyboard.xml</DocumentationFile>
-    </PropertyGroup>
+    </PropertyGroup> 
     
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
