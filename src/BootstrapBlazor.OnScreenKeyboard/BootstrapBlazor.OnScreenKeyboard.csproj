@@ -6,14 +6,16 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>7.0.0</Version>
+        <Version>7.0.1</Version>
         <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</PackageProjectUrl>
         <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
         <PackageTags>Bootstrap Blazor OnScreenKeyboard Components</PackageTags>
         <Description>Bootstrap UI OnScreenKeyboard components experience</Description>
         <AssemblyName>BootstrapBlazor.OnScreenKeyboard</AssemblyName>
         <RootNamespace>BootstrapBlazor.OnScreenKeyboard</RootNamespace>
         <AssemblyOriginatorKeyFile>..\keys\Longbow.Utility.snk</AssemblyOriginatorKeyFile>
+        <SignAssembly>True</SignAssembly>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
