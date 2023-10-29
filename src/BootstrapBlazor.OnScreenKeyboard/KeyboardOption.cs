@@ -1,4 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿// ********************************** 
+// Densen Informatica 中讯科技 
+// 作者：Alex Chow
+// e-mail:zhouchuanglin@gmail.com 
+// **********************************
+
+using System.Text.Json.Serialization;
 
 namespace BootstrapBlazor.Components;
 
@@ -151,7 +157,7 @@ public class KeyboardOption
     [JsonIgnore]
     public string[]? CustomerKeyboardSpecialcharacters { get; set; }
 
-    string[] KeyboardSpecialcharactersEurope { get; set; } = { "#", "€", "Ñ" };
+    private string[] KeyboardSpecialcharactersEurope { get; set; } = { "#", "€", "Ñ" };
 
 
 
@@ -161,11 +167,9 @@ public class KeyboardOption
     public string[]? keysSpecialCharsArrayOfStrings
     {
         get =>
-             CustomerKeyboardSpecialcharacters != null ?
-             CustomerKeyboardSpecialcharacters :
-             KeyboardSpecialcharacters == KeyboardSpecialcharacters.europe ?
+             CustomerKeyboardSpecialcharacters ?? (KeyboardSpecialcharacters == KeyboardSpecialcharacters.europe ?
              KeyboardSpecialcharactersEurope :
-             null;
+             null);
     }
 
 
