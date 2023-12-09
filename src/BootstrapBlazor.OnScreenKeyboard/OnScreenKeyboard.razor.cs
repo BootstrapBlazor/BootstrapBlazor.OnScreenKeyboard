@@ -15,7 +15,7 @@ namespace BootstrapBlazor.Components;
 public partial class OnScreenKeyboard : IAsyncDisposable
 {
     [Inject] private IJSRuntime? JS { get; set; }
-    private IJSObjectReference? module;
+    private IJSObjectReference? Module { get; set; }
     private IJSObjectReference? instance;
 
     /// <summary>
@@ -66,19 +66,19 @@ public partial class OnScreenKeyboard : IAsyncDisposable
         {
             if (firstRender)
             {
-                module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-                await module.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
+                Module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+                await Module.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
 
                 Option ??= new KeyboardOption();
                 if (KeyboardKeys != null) Option.KeyboardKeysType = KeyboardKeys!.Value;
                 try
                 {
-                    instance = await module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
+                    instance = await Module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
                 catch (Exception)
                 {
                     await Task.Delay(200);
-                    instance = await module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
+                    instance = await Module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
             }
         }
@@ -95,9 +95,9 @@ public partial class OnScreenKeyboard : IAsyncDisposable
             await instance.DisposeAsync();
         }
 
-        if (module is not null)
+        if (Module is not null)
         {
-            await module.DisposeAsync();
+            await Module.DisposeAsync();
         }
     }
 
