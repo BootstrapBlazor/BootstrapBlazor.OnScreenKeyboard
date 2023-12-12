@@ -6,6 +6,7 @@
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BootstrapBlazor.Components;
 
@@ -14,9 +15,12 @@ namespace BootstrapBlazor.Components;
 /// </summary>
 public partial class OnScreenKeyboard : IAsyncDisposable
 {
-    [Inject] private IJSRuntime? JSRuntime { get; set; }
+    [Inject]
+    [NotNull]
+    private IJSRuntime? JSRuntime { get; set; }
+
+    private IJSObjectReference? ModuleBase { get; set; }
     private IJSObjectReference? Module { get; set; }
-    private IJSObjectReference? instance;
 
     /// <summary>
     /// 获得/设置 组件class名称
@@ -66,19 +70,19 @@ public partial class OnScreenKeyboard : IAsyncDisposable
         {
             if (firstRender)
             {
-                Module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-                await Module.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
+                ModuleBase = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+                await ModuleBase.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
 
                 Option ??= new KeyboardOption();
                 if (KeyboardKeys != null) Option.KeyboardKeysType = KeyboardKeys!.Value;
                 try
                 {
-                    instance = await Module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
+                    Module = await ModuleBase.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
                 catch (Exception)
                 {
                     await Task.Delay(200);
-                    instance = await Module.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
+                    Module = await ModuleBase.InvokeAsync<IJSObjectReference>("init", ClassName, Option);
                 }
             }
         }
@@ -90,14 +94,14 @@ public partial class OnScreenKeyboard : IAsyncDisposable
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {
-        if (instance != null)
-        {
-            await instance.DisposeAsync();
-        }
-
-        if (Module is not null)
+        if (Module != null)
         {
             await Module.DisposeAsync();
+        }
+
+        if (ModuleBase is not null)
+        {
+            await ModuleBase.DisposeAsync();
         }
     }
 
