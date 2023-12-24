@@ -71,7 +71,7 @@ public partial class OnScreenKeyboard : IAsyncDisposable
             if (firstRender)
             {
                 ModuleBase = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/app.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-                await ModuleBase.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.1.0.min.js");
+                await ModuleBase.InvokeVoidAsync("addScript", "./_content/BootstrapBlazor.OnScreenKeyboard/lib/kioskboard/kioskboard-aio-2.3.0.min.js");
 
                 Option ??= new KeyboardOption();
                 if (KeyboardKeys != null) Option.KeyboardKeysType = KeyboardKeys!.Value;
