@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>8.0.2</Version>
+        <Version>8.0.3</Version>
         <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</PackageProjectUrl>
         <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.OnScreenKeyboard</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -32,6 +32,10 @@
     <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0" />
         <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="OnScreenKeyboard.razor.js" />
     </ItemGroup>
 
     <!-- 通过移除正常的引用并替换成固定版本的引用，达到无论如何更新都无法生效的目的。 -->

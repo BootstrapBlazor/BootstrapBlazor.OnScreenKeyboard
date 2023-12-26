@@ -1,5 +1,7 @@
 ## Blazor OnScreenKeyboard 屏幕键盘 组件
 
+基于 [KioskBoard](https://github.com/furcan/KioskBoard)
+
 ### 示例
 
 https://www.blazor.zone/onscreenkeyboards
